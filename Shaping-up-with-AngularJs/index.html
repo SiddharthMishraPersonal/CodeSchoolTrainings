@@ -7,15 +7,27 @@
     <link rel="stylesheet" type="text/css" href="lib/bootstrap-3.3.7-dist/css/bootstrap.min.css" />
 
     <body ng-controller="StoreController as store">
-        <li class="list-group-item" ng-repeat="product in store.products">
-            <div ng-hide="product.soldOut">
+        <li class="list-group-item" ng-repeat="product in store.products | orderBy: '-price'">
+            <div>
                 <h3>
                     {{product.name}}
-                    <em class="pull-right">{{product.price}}</em>
+                    <em class="pull-right">{{product.price | currency}}</em>
                 </h3>
-                <button class="pull-right" ng-show="product.canPurchase">Add to Cart</button>
+                <button ng-hide="product.soldOut" class="pull-right" ng-show="product.canPurchase">Add to Cart</button>
+                <h3 class="pull-right" ng-show="product.soldOut">{{'Sold Out!' | uppercase}}</h3>
+                <h4>{{product.timeStamp | date:'MM/dd/yyyy @ h:mma'}}</h4>
                 <p>{{product.description}}</p>
 
+                <div class="gallery">
+                    <div class="img-wrap">
+                        <img ng-src="{{product.images[0].full}}" height="25%" width="25%" />
+                    </div>
+                    <ul class="img-thumbnails clearfix">
+                        <li class="small-image pull-left thumbnail" ng-repeat="image in product.images">
+                            <img ng-src="{{image.full}}" height="100px" width="100px" />
+                        </li>
+                    </ul>
+                </div>
             </div>
         </li>
 
