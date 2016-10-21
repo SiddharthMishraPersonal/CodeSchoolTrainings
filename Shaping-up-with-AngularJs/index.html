@@ -18,7 +18,7 @@
                 <h4>{{product.timeStamp | date:'MM/dd/yyyy @ h:mma'}}</h4>
                 <p>{{product.description}}</p>
 
-                <div class="gallery">
+                <div class="gallery" ng-show="product.images.length">
                     <div class="img-wrap">
                         <img ng-src="{{product.images[0].full}}" height="25%" width="25%" />
                     </div>
