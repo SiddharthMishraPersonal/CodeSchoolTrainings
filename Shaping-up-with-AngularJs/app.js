@@ -12,17 +12,20 @@
             reviews: [{
                     stars: 5,
                     body: "I love this product!",
-                    author: "joe@thomas.com"
+                    author: "joe@thomas.com",
+                    createdOn: Date.now()
         },
                 {
                     stars: 3,
                     body: "This product is O.K.!",
-                    author: "test@example.com"
+                    author: "test@example.com",
+                    createdOn: Date.now()
         },
                 {
                     stars: 2,
                     body: "I hate this product!",
-                    author: "none@anybody.com"
+                    author: "none@anybody.com",
+                    createdOn: Date.now()
         }
                  ]
             },
@@ -45,17 +48,20 @@
             reviews: [{
                     stars: 5,
                     body: "I love this product!",
-                    author: "joe@thomas.com"
+                    author: "joe@thomas.com",
+                    createdOn: Date.now()
         },
                 {
                     stars: 3,
                     body: "This product is O.K.!",
-                    author: "test@example.com"
+                    author: "test@example.com",
+                    createdOn: Date.now()
         },
                 {
                     stars: 2,
                     body: "I hate this product!",
-                    author: "none@anybody.com"
+                    author: "none@anybody.com",
+                    createdOn: Date.now()
         }
                  ]
             },
@@ -77,17 +83,20 @@
             reviews: [{
                     stars: 5,
                     body: "I love this product!",
-                    author: "joe@thomas.com"
+                    author: "joe@thomas.com",
+                    createdOn: Date.now()
         },
                 {
                     stars: 3,
                     body: "This product is O.K.!",
-                    author: "test@example.com"
+                    author: "test@example.com",
+                    createdOn: Date.now()
         },
                 {
                     stars: 2,
                     body: "I hate this product!",
-                    author: "none@anybody.com"
+                    author: "none@anybody.com",
+                    createdOn: Date.now()
         }
                  ]
             },
@@ -110,17 +119,20 @@
             reviews: [{
                     stars: 5,
                     body: "I love this product!",
-                    author: "joe@thomas.com"
+                    author: "joe@thomas.com",
+                    createdOn: Date.now()
         },
                 {
                     stars: 3,
                     body: "This product is O.K.!",
-                    author: "test@example.com"
+                    author: "test@example.com",
+                    createdOn: Date.now()
         },
                 {
                     stars: 2,
                     body: "I hate this product!",
-                    author: "none@anybody.com"
+                    author: "none@anybody.com",
+                    createdOn: Date.now()
         }
                  ]
             },
@@ -148,17 +160,20 @@
             reviews: [{
                     stars: 5,
                     body: "I love this product!",
-                    author: "joe@thomas.com"
+                    author: "joe@thomas.com",
+                    createdOn: Date.now()
         },
                 {
                     stars: 3,
                     body: "This product is O.K.!",
-                    author: "test@example.com"
+                    author: "test@example.com",
+                    createdOn: Date.now()
         },
                 {
                     stars: 2,
                     body: "I hate this product!",
-                    author: "none@anybody.com"
+                    author: "none@anybody.com",
+                    createdOn: Date.now()
         }
                  ]
             },
@@ -184,17 +199,20 @@
             reviews: [{
                     stars: 5,
                     body: "I love this product!",
-                    author: "joe@thomas.com"
+                    author: "joe@thomas.com",
+                    createdOn: Date.now()
         },
                 {
                     stars: 3,
                     body: "This product is O.K.!",
-                    author: "test@example.com"
+                    author: "test@example.com",
+                    createdOn: Date.now()
         },
                 {
                     stars: 2,
                     body: "I hate this product!",
-                    author: "none@anybody.com"
+                    author: "none@anybody.com",
+                    createdOn: Date.now()
         }
                  ]
             },
@@ -209,17 +227,20 @@
             reviews: [{
                     stars: 5,
                     body: "I love this product!",
-                    author: "joe@thomas.com"
+                    author: "joe@thomas.com",
+                    createdOn: Date.now()
         },
                 {
                     stars: 3,
                     body: "This product is O.K.!",
-                    author: "test@example.com"
+                    author: "test@example.com",
+                    createdOn: Date.now()
         },
                 {
                     stars: 2,
                     body: "I hate this product!",
-                    author: "none@anybody.com"
+                    author: "none@anybody.com",
+                    createdOn: Date.now()
         }
                  ]
             },
@@ -234,17 +255,20 @@
             reviews: [{
                     stars: 5,
                     body: "I love this product!",
-                    author: "joe@thomas.com"
+                    author: "joe@thomas.com",
+                    createdOn: Date.now()
         },
                 {
                     stars: 3,
                     body: "This product is O.K.!",
-                    author: "test@example.com"
+                    author: "test@example.com",
+                    createdOn: Date.now()
         },
                 {
                     stars: 2,
                     body: "I hate this product!",
-                    author: "none@anybody.com"
+                    author: "none@anybody.com",
+                    createdOn: Date.now()
         }
                  ],
             images: [
@@ -277,12 +301,13 @@
         };
     });
 
-    app.controller('ReviewController', function(){
-    this.review={};
-    this.addReview = function(product){
-      product.reviews.push(this.review);
-      this.review = {};
-    };
-  });
+    app.controller('ReviewController', function () {
+        this.review = {};
+        this.review.createdOn = Date.now();
+        this.addReview = function (product) {
+            product.reviews.push(this.review);
+            this.review = {};
+        };
+    });
 
 })();

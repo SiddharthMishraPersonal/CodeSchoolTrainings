@@ -5,7 +5,7 @@
     <script type="text/javascript" src="lib/AngularJs.1.5.8/angular.min.js"></script>
     <script type="text/javascript" src="app.js"></script>
     <link rel="stylesheet" type="text/css" href="lib/bootstrap-3.3.7-dist/css/bootstrap.min.css" />
-    <link rel="stylesheet" type="text/css" href="lib/app.css"/>
+    <link rel="stylesheet" type="text/css" href="lib/app.css" />
 
     <body ng-controller="StoreController as store">
         <li class="list-group-item" ng-repeat="product in store.products | orderBy: '-price'">
@@ -61,7 +61,7 @@
                             <li ng-repeat="review in product.reviews">
                                 <blockquote>
                                     <b>Stars: {{review.stars}}</b> {{review.body}}
-                                    <cite clas="clearfix">by: {{review.author}}</cite>
+                                    <cite clas="clearfix">- {{review.author}} on {{review.createdOn | date:'MM/dd/yyyy @ h:mma'}}</cite>
                                 </blockquote>
                             </li>
                         </ul>
