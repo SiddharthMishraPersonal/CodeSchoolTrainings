@@ -33,6 +33,8 @@
             canPurchase: true,
             soldOut: true,
             timeStamp: 1488123412323,
+            specifications: "Not Yet done!",
+            reviews: "No reviews",
             images: [{
                 full: "assets/Dodecahedron-Gem.jpg",
                 thumb: "assets/Dodecahedron-Gem-Thumb.jpg"
@@ -48,6 +50,8 @@
             canPurchase: true,
             soldOut: false,
             timeStamp: 1477123412323,
+            specifications: "Not Yet done!",
+            reviews: "No reviews",
             images: [
                 {
                     full: "assets/Pentagonal-Gem.jpg",
@@ -63,6 +67,8 @@
             canPurchase: true,
             soldOut: false,
             timeStamp: 1466123412323,
+            specifications: "Not Yet done!",
+            reviews: "No reviews",
             images: [{
                 full: "assets/Sapphire-Gem.jpg",
                 thumb: "assets/Sapphire-Gem-Thumb.jpg"
@@ -83,6 +89,8 @@
             canPurchase: true,
             soldOut: true,
             timeStamp: 1488123412323,
+            specifications: "Not Yet done!",
+            reviews: "No reviews",
             images: [
                 {
                     full: "assets/Gold-Gem.jpg",
@@ -101,7 +109,9 @@
             description: "It is Pentagonal in shape.",
             canPurchase: true,
             soldOut: false,
-            timeStamp: 1477123412323
+            timeStamp: 1477123412323,
+            specifications: "Not Yet done!",
+            reviews: "No reviews",
             },
         {
             name: "Blue Sapphire",
@@ -110,6 +120,8 @@
             canPurchase: true,
             soldOut: false,
             timeStamp: 1466123412323,
+            specifications: "Not Yet done!",
+            reviews: "No reviews",
             images: [
                 {
                     full: "assets/Blue-Sapphire-Gem.jpg",
