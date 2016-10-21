@@ -5,6 +5,7 @@
     <script type="text/javascript" src="lib/AngularJs.1.5.8/angular.min.js"></script>
     <script type="text/javascript" src="app.js"></script>
     <link rel="stylesheet" type="text/css" href="lib/bootstrap-3.3.7-dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="lib/app.css"/>
 
     <body ng-controller="StoreController as store">
         <li class="list-group-item" ng-repeat="product in store.products | orderBy: '-price'">
@@ -64,33 +65,35 @@
                                 </blockquote>
                             </li>
                         </ul>
-                         <!--  Review Form -->
-            <form name="reviewForm" ng-controller="ReviewController as reviewCtrl" ng-submit="reviewCtrl.addReview(product)">
+                        <!--  Review Form -->
+                        <form name="reviewForm" ng-controller="ReviewController as reviewCtrl" ng-submit="reviewForm.$valid && reviewCtrl.addReview(product)" novalidate>
 
-              <!--  Live Preview -->
-              <blockquote>
-                <strong>{{reviewCtrl.review.stars}} Stars</strong>
-                {{reviewCtrl.review.body}}
-                <cite class="clearfix">—{{reviewCtrl.review.author}}</cite>
-              </blockquote>
+                            <!--  Live Preview -->
+                            <blockquote>
+                                <strong>{{reviewCtrl.review.stars}} Stars</strong> {{reviewCtrl.review.body}}
+                                <cite class="clearfix">—{{reviewCtrl.review.author}}</cite>
+                            </blockquote>
 
-              <!--  Review Form -->
-              <h4>Submit a Review</h4>
-              <fieldset class="form-group">
-                <select ng-model="reviewCtrl.review.stars" class="form-control" ng-options="stars for stars in [5,4,3,2,1]" title="Stars">
-                  <option value="">Rate the Product</option>
-                </select>
-              </fieldset>
-              <fieldset class="form-group">
-                <textarea ng-model="reviewCtrl.review.body" class="form-control" placeholder="Write a short review of the product..." title="Review"></textarea>
-              </fieldset>
-              <fieldset class="form-group">
-                <input ng-model="reviewCtrl.review.author" type="email" class="form-control" placeholder="jimmyDean@example.org" title="Email" />
-              </fieldset>
-              <fieldset class="form-group">
-                <input type="submit" class="btn btn-primary pull-right" value="Submit Review" />
-              </fieldset>
-            </form>
+                            <!--  Review Form -->
+                            <h4>Submit a Review</h4>
+                            <fieldset class="form-group">
+                                <select ng-model="reviewCtrl.review.stars" class="form-control" ng-options="stars for stars in [5,4,3,2,1]" title="Stars" required>
+                                    <option value="">Rate the Product</option>
+                                </select>
+                            </fieldset>
+                            <fieldset class="form-group">
+                                <textarea ng-model="reviewCtrl.review.body" class="form-control" placeholder="Write a short review of the product..." title="Review" required></textarea>
+                            </fieldset>
+                            <fieldset class="form-group">
+                                <input ng-model="reviewCtrl.review.author" type="email" class="form-control" placeholder="jimmyDean@example.org" title="Email" required/>
+                            </fieldset>
+                            <div>
+                                reviewform is {{reviewForm.$valid}}
+                            </div>
+                            <fieldset class="form-group">
+                                <input type="submit" class="btn btn-primary pull-right" value="Submit Review" />
+                            </fieldset>
+                        </form>
                     </div>
                 </section>
             </div>
