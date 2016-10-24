@@ -316,4 +316,12 @@
             templateUrl: 'directives/product-title/index.html'
         };
     });
+
+    app.directive('productDescription', function () {
+        return {
+            restrict: 'E',
+            templateUrl: 'directives/product-description/index.html'
+
+        };
+    });
 })();
