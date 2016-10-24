@@ -312,7 +312,7 @@
 
     app.directive('productTitle', function () {
         return {
-            restrict: 'E',
+            restrict: 'A',
             templateUrl: 'directives/product-title/index.html'
         };
     });
