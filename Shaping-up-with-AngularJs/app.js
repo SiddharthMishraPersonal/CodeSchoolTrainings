@@ -310,4 +310,10 @@
         };
     });
 
+    app.directive('productTitle', function () {
+        return {
+            restrict: 'E',
+            templateUrl: 'directives/product-title/index.html'
+        };
+    });
 })();

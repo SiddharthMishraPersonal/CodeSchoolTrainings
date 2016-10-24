@@ -10,10 +10,7 @@
     <body ng-controller="StoreController as store">
         <li class="list-group-item" ng-repeat="product in store.products | orderBy: '-price'">
             <div>
-                <h3>
-                    {{product.name}}
-                    <em class="pull-right">{{product.price | currency}}</em>
-                </h3>
+                <product-title></product-title>
                 <button ng-hide="product.soldOut" class="pull-right" ng-show="product.canPurchase">Add to Cart</button>
                 <h3 class="pull-right" ng-show="product.soldOut">{{'Sold Out!' | uppercase}}</h3>
                 <h4>{{product.timeStamp | date:'MM/dd/yyyy @ h:mma'}}</h4>
